@@ -44,6 +44,25 @@ export default [{
     input: 'src/Test.vue',
     output: {
         format: 'esm',
+        file: 'dist/bundle-single-vue-esm.js'
+    },
+    plugins: [
+        resolve(),
+        vue(),
+        postcss(),
+        // typescript(),
+        // with @rollup/plugin-typescript
+        typescript({
+          include: [/\.tsx?$/, /\.vue\?.*?lang=ts/]
+        }),
+        replace({
+          'process.env.NODE_ENV': "'production'"
+        }),
+    ]
+}, {
+    input: 'src/component.ts',
+    output: {
+        format: 'esm',
         file: 'dist/bundle-component-esm.js'
     },
     plugins: [
