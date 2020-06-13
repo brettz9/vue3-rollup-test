@@ -19,7 +19,7 @@
     "rollup"
   ],
   "scripts": {
-    "open": "open http://localhost:5000/src/ && npm start",
+    "open": "open-cli http://localhost:5000/src/ && npm start",
     "start": "serve",
     "build": "rollup -c"
   },
